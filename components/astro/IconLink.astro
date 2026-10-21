@@ -1,0 +1,21 @@
+---
+import { buttonVariants } from "@atoms/button";
+
+interface Props {
+  href: string;
+  description: string;
+}
+
+const { href, description } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  title={description}
+  aria-label={description}
+  class={buttonVariants({ variant: "outline", size: "icon" })}
+>
+  <slot />
+</a>

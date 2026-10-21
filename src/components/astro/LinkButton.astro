@@ -1,0 +1,42 @@
+---
+import { buttonVariants } from "@atoms/button";
+import { type typeVariant } from "@/types";
+import { cn } from "@/lib/utils";
+
+interface Props {
+  link: string;
+  text: string;
+  variant: typeVariant;
+  position?: "left" | "right";
+  download?: boolean | string;
+  target?: string;
+  rel?: string;
+  class?: string;
+}
+
+const {
+  link,
+  text,
+  variant,
+  position = "right",
+  download,
+  target = download ? undefined : "_blank",
+  rel = target === "_blank" ? "noopener noreferrer" : undefined,
+  class: className,
+} = Astro.props;
+
+const downloadAttr = typeof download === "string" ? download : download ? "" : undefined;
+---
+
+<a
+  class={cn(buttonVariants({ variant }), "inline-flex items-center gap-2", className)}
+  slot="actions-btn"
+  href={link}
+  target={target}
+  rel={rel}
+  download={downloadAttr}
+>
+  {position === "left" && <slot />}
+  <span>{text}</span>
+  {position === "right" && <slot />}
+</a>

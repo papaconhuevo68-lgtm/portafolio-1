@@ -1,0 +1,22 @@
+---
+import SubtitleSection from "@astro/SubtitleSection.astro";
+
+import { projects } from "@/data/projects";
+import { ProjectCard } from "./molecules/projectCard";
+---
+
+<SubtitleSection title="Proyectos en Desarrollo :3" />
+
+<section class="flex flex-col gap-8 p-2">
+  {
+    projects.map((project) => (
+      <ProjectCard
+        name={project.name}
+        description={project.description}
+        bannerUrl={project.bannerUrl}
+        stackTech={project.stackTech}
+        ctas={project.ctas}
+      />
+    ))
+  }
+</section>

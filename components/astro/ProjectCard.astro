@@ -1,0 +1,35 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  bannerUrl: string;
+  name: string;
+  description: string;
+}
+
+const { bannerUrl, name, description } = Astro.props;
+---
+
+<article class="group flex gap-6 md:justify-center md:even:flex-row-reverse">
+  <picture
+    class="hidden h-56 w-full max-w-80 overflow-hidden rounded-2xl shadow-xl bg-white/70 md:block"
+  >
+    <Image
+      class="relative rounded-lg transition-all duration-500 group-hover:-translate-y-4"
+      width={320}
+      height={220}
+      src={bannerUrl}
+      alt={name + " banner"}
+    />
+  </picture>
+  <div class="flex flex-col justify-center gap-2">
+    <h3 class="text-xl font-space font-extrabold">{name}</h3>
+    <p class="max-w-96 font-varela">{description}</p>
+    <section class="my-2 flex gap-2 bg-zinc-100 w-fit rounded-lg p-2">
+      <slot name="stack-tech" />
+    </section>
+    <section class="flex gap-2">
+      <slot name="actions-btn" />
+    </section>
+  </div>
+</article>

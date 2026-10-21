@@ -1,0 +1,18 @@
+---
+import { LinkedInLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import IconLink from "@astro/IconLink.astro";
+import "@fontsource/asimovian";
+import "@fontsource-variable/space-grotesk";
+---
+
+<header class="z-10 flex h-[8vh] w-full items-center justify-between px-4 lg:px-0 py-4">
+  <h2 class="text-2xl font-asimovian font-extrabold">vannia</h2>
+  <aside class="flex items-center gap-2">
+    <IconLink href="https://www.linkedin.com/in/vannia-angelica-ramos-pantoja-15557b443/?isSelfProfile=true" description="Link to Linkedin">
+      <LinkedInLogoIcon />
+    </IconLink>
+    <IconLink href="https://github.com/papaconhuevo68-lgtm" description="Link to GitHub">
+      <GitHubLogoIcon />
+    </IconLink>
+  </aside>
+</header>

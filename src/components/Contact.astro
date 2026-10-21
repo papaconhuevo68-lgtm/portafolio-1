@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SubtitleSection from "@/components/astro/SubtitleSection.astro";
+import { Button } from "@/components/atoms/button";
+import { Input } from "@atoms/input";
+import { Label } from "@atoms/label";
+import { Textarea } from "@atoms/textarea";
+---
+
+<SubtitleSection title="Contactar" />
+<section class="flex flex-col items-center justify-center gap-4 p-8">
+  <p class="text-center text-neutral-400 max-w-md">
+    ¿Tienes alguna pregunta o proyecto en mente? ¡Hablemos por WhatsApp!
+  </p>
+  <a
+    href="https://wa.me/51927334920"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-white text-black font-bold"
+  >
+    Contactar por WhatsApp
+  </a>
+</section>

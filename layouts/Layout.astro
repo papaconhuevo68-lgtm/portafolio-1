@@ -1,0 +1,58 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Footer from "@views/Footer.astro";
+import Header from "@views/Header.astro";
+import "@styles/globals.css";
+import { Toaster } from "sonner";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="I am a frontend web developer, this is my web portfolio where I show my information and projects. I am from Peru"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Portfolio Web Frontend - Vannia" />
+    <meta
+      property="og:description"
+      content="I am a frontend web developer, this is my web portfolio where I show my information and projects. I am from Peru"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/withoutnicks/my-portfolio-web/refs/heads/main/public/preview.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio Web Frontend - Vannia" />
+    <meta
+      name="twitter:description"
+      content="This is my web portfolio where I show my information and projects"
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/withoutnicks/my-portfolio-web/refs/heads/main/public/preview.webp"
+    />
+    <ClientRouter />
+  </head>
+  <body class="overflow-x-hidden bg-black text-white">
+    <div class="mx-auto max-w-4xl">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+    <Toaster richColors client:idle />
+  </body>
+</html>
