@@ -1,4 +1,5 @@
-# 🚀 Portfolio Web - Gerardo Caycho
+# 🚀 Portfolio Web 
+
 
 ## 🚀 Instalación y Uso
 
